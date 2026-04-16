@@ -11,24 +11,30 @@
     html {
         scroll-behavior: smooth;
     }
+    body {
+        @apply bg-white text-gray-900 transition-colors duration-300;
+    }
+    .dark body {
+        @apply bg-slate-950 text-slate-100;
+    }
 }
 ::-webkit-scrollbar{
     display: none;
 }
-.rich-text {font-size: 15px;color: #7a7b7d;}
+ .rich-text {
+    @apply text-[15px] text-[#7a7b7d] dark:text-gray-400;
+}
 
-.rich-text p { margin-bottom: 16px;}
+.rich-text p { @apply mb-4; }
 
-.rich-text h1 {font-size: 36px; font-weight:  800; color: #252525; margin: 16px ;}
- .rich-text h2 {font-size: 24px; font-weight:  700; color: #252525; margin: auto;}
- .rich-text h3 {font-size: 18px; font-weight:  600; color: #333;margin: auto;}
- .rich-text h4 {font-size: 16px; font-weight: 500; color: #444444;margin: auto;}
- .rich-text h5 {font-size: 14px; font-weight: 400; color: #555;margin: auto;}
- .rich-text h6 {font-size: 12px; font-weight: 300; color: #666;margin: auto;}
+.rich-text h1 { @apply text-4xl font-extrabold text-[#252525] dark:text-white my-4; }
+.rich-text h2 { @apply text-2xl font-bold text-[#252525] dark:text-white my-2; }
+.rich-text h3 { @apply text-lg font-semibold text-[#333] dark:text-gray-200 my-2; }
+.rich-text h4 { @apply text-base font-medium text-[#444] dark:text-gray-300 my-1; }
 
- .rich-text strong {font-weight: 700;}
+.rich-text strong { @apply font-bold; }
 
- .rich-text ol {margin-left:  30px; list-style-type: decimal;}
- .rich-text ul {margin-left:  30px; list-style-type: disc;}
- .rich-text li {margin-bottom: 8px;}
+.rich-text ol { @apply ml-8 list-decimal; }
+.rich-text ul { @apply ml-8 list-disc; }
+.rich-text li { @apply mb-2; }
 
