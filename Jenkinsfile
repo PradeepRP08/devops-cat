@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  triggers {
-    pollSCM('H/2 * * * *')
-  }
-
   tools {
     nodejs 'nodejs'
   }
@@ -16,15 +12,19 @@ pipeline {
       }
     }
 
-    stage('Install') {
+    stage('Install Frontend') {
       steps {
-        sh 'npm install'
+        dir('client') {
+          sh 'npm install'
+        }
       }
     }
 
-    stage('Build') {
+    stage('Build Frontend') {
       steps {
-        sh 'npm run build'
+        dir('client') {
+          sh 'npm run build'
+        }
       }
     }
 
