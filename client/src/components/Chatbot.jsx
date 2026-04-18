@@ -32,7 +32,7 @@ const Chatbot = () => {
         let response = "I'm still learning! Could you rephrase your question? Try asking me about 'how to apply', 'resume help', or 'application status'.";
         
         for (const [key, answer] of Object.entries(faqData)) {
-            // optimized to check if any words in the key exist in the userMsg
+            // optimized  check if any words in the key exist in the userMsg
             if (userMsg.includes(key)) {
                 response = answer;
                 break;
@@ -76,7 +76,7 @@ const Chatbot = () => {
                 <div ref={chatEndRef} />
            </div>
 
-           {/* Input Section */}
+           {/* Input Sectio */}
            <form onSubmit={handleSend} className="p-4 bg-white border-t border-gray-100 flex gap-2">
                 <input 
                     className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 outline-none text-sm focus:border-blue-500 transition-all font-medium text-black"
