@@ -64,7 +64,7 @@ const Chatbot = () => {
                 <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1.5 rounded-lg transition-all text-xl">✕</button>
            </div>
 
-           {/* Messages Section */}
+           {/* Messages Sectio  */}
            <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50/50">
                 {messages.map((m, i) => (
                     <div key={i} className={`flex ${m.isBot ? 'justify-start' : 'justify-end'} animate-in fade-in slide-in-from-bottom-2`}>
