@@ -1,0 +1,27 @@
+---
+- name: Install DevOps dependencies
+  hosts: devops
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install packages
+      apt:
+        name:
+          - git
+          - curl
+          - unzip
+          - jq
+          - docker.io
+          - openjdk-17-jdk
+          - nginx
+          - ansible
+        state: present
+
+    - name: Enable Docker
+      service:
+        name: docker
+        enabled: yes
+        state: started
